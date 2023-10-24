@@ -1,0 +1,15 @@
+C:\Users\disrct\Desktop\super auto bosch\bin\Debug\net7.0-windows\super auto bosch.exe
+C:\Users\disrct\Desktop\super auto bosch\bin\Debug\net7.0-windows\super auto bosch.deps.json
+C:\Users\disrct\Desktop\super auto bosch\bin\Debug\net7.0-windows\super auto bosch.runtimeconfig.json
+C:\Users\disrct\Desktop\super auto bosch\bin\Debug\net7.0-windows\super auto bosch.dll
+C:\Users\disrct\Desktop\super auto bosch\bin\Debug\net7.0-windows\super auto bosch.pdb
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.csproj.AssemblyReference.cache
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.AssemblyInfoInputs.cache
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.AssemblyInfo.cs
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.csproj.CoreCompileInputs.cache
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.dll
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\refint\super auto bosch.dll
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.pdb
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\super auto bosch.genruntimeconfig.cache
+C:\Users\disrct\Desktop\super auto bosch\obj\Debug\net7.0-windows\ref\super auto bosch.dll

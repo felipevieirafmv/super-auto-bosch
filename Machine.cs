@@ -1,34 +1,35 @@
 public abstract class Machine
 {
-    public int Attack {get; set;}
-    public int Life {get; set;}
-    public int Experience {get; set;}
-    public bool Fainted {get; private set;}
+    public int Ataque       {get; set;}
+    public int Vida         {get; set;}
+    public int Experiencia   {get; set;}
+    public bool Desmaiou     {get; private set;}
+    public int Tier         { get; set; }
 
     public int Level =>
-        Experience switch
+        Experiencia switch
         {
             < 3 => 1,
             < 6 => 2,
-            _ => 1,
+            _ => 3,
         };
 
     public void AttackPet(Machine machine)
     {
-        this.ReceiveDamage(machine.Attack);
-        machine.ReceiveDamage(this.Attack);
+        this.ReceiveDamage(machine.Ataque);
+        machine.ReceiveDamage(this.Ataque);
     }
 
     public void ReceiveDamage(int damage)
     {
-        this.Life -= damage;
-        if (this.Life <=0)
-            this.Fainted = true;
+        this.Vida -= damage;
+        if (this.Vida <= 0)
+            this.Desmaiou = true;
     }
 
-    public void Union(Machine pet)
+    public void Union(Machine machine)
     {
-        if (this.GetType() != pet.GetType())
+        if (this.GetType() != machine.GetType())
             throw new InvalidOperationException(
                 "Você não pode juntar peças diferentes"
             );
@@ -36,37 +37,35 @@ public abstract class Machine
         int oldLevel = this.Level;
 
         
-        this.Attack = this.Attack > pet.Attack ?
-            this.Attack : pet.Attack;
+        this.Ataque = this.Ataque > machine.Ataque ?
+            this.Ataque : machine.Ataque;
 
-        this.Life = this.Life > pet.Life ?
-            this.Life : pet.Life;
+        this.Vida = this.Vida > machine.Vida ?
+            this.Vida : machine.Vida;
 
-        int levelUp = this.Experience > pet.Experience ?
-            pet.Experience : this.Experience;
+        int levelUp = this.Experiencia > machine.Experiencia ?
+            machine.Experiencia : this.Experiencia;
 
-        this.Attack += levelUp;
-        this.Life += levelUp;
+        this.Ataque += levelUp;
+        this.Vida += levelUp;
 
-        this.Experience += pet.Experience;
-        if (this.Experience > 6)
-            this.Experience = 6;
+        this.Experiencia += machine.Experiencia;
+        if (this.Experiencia > 6)
+            this.Experiencia = 6;
         
         if (this.Level > oldLevel)
             LevelUpEffect();
         
     }
 
-    public virtual void FaintEffect(){}
-    public virtual void SellEffect(Shop shop){}
-    public virtual void BuyEffect()
-        => null;
-    public virtual void LevelUpEffect()
-        => null;
-    public virtual void StartBattleEffect()
-        => null;
-    public virtual void AllySummonedEffect()
-        => null;
+    public virtual void FaintEffect() { }
+    public virtual void SellEffect() { }
+    public virtual void BuyEffect() { }
+    public virtual void LevelUpEffect() { }
+    public virtual void StartBattleEffect() { }
+    public virtual void TurnBegin() { }
+    public virtual void TurnEnd() { }
+    public virtual void AllySummonedEffect() { }
     public abstract Machine Clone();
 
 }

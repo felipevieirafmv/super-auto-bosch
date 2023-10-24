@@ -11,22 +11,32 @@ public class InicioLojaState : State
 {
     public override void Act()
     {
+        var quant = 0;
         loja.Moeda = 10;
-        loja.FreeRefill();
-        foreach (machine M in time)
+        if (App.Turno < 5)
         {
-            M.StartTurn();
+            quant = 3;
         }
+        else if (App.Turno > 8)
+        {
+            quant = 5;
+        }
+        else
+            quant = 4;
+        loja.FreeRefill(quant);
+        foreach (machine M in time)
+            M.TurnBegin();
     }
 }
 
 public class LojaState : State
 {
-    
+    //libera a compra
 }
 public class FimLojaState : State
 {
-
+    foreach(machine M in time)
+        M.TurnEnd();
 }
 public class InicioBatalhaState : State
 {

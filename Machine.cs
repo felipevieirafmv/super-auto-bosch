@@ -57,10 +57,8 @@ public abstract class Machine
         
     }
 
-    public virtual void FaintEffect()
-        => null;
-    public virtual void SellEffect(Shop shop)
-        => null;
+    public virtual void FaintEffect(){}
+    public virtual void SellEffect(Shop shop){}
     public virtual void BuyEffect()
         => null;
     public virtual void LevelUpEffect()

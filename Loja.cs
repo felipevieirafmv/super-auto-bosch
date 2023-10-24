@@ -1,18 +1,20 @@
-// using System;
+using System;
 
-// public abstract class Shop
-// {
-//     public int Gold {get; set;} = 10;
+public abstract class Loja
+{
+    public int Moeda {get; set;} = 10;
 
-//     private List<Pet> pets = new List<Pet>();
-//     private List<Pet> basePets = new List<Pet>();
+    private List<Pet> pets = new List<Pet>();
 
-//     public void Buy(int index, Team team);
+    private List<Pet> basePets = new List<Pet>();
 
-//     public void Add(Pet basePet);
+    public void Buy(int index, Team team);
 
-//     public void Refill();
-//     private Pet getRandomPet();
+    public void Add(Pet basePet);
 
-//     public void FreeRefill();
-// }
+    public void Refill();
+
+    private Pet getRandomPet();
+
+    public void FreeRefill();
+}

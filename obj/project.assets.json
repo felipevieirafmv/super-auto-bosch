@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\disrct\\Desktop\\super auto bosch\\super auto bosch.csproj",
       "projectName": "super auto bosch",
       "projectPath": "C:\\Users\\disrct\\Desktop\\super auto bosch\\super auto bosch.csproj",
       "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\disrct\\Desktop\\super auto bosch\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\disrct\\super-auto-bosch\\super auto bosch.csproj",
+      "projectName": "super auto bosch",
+      "projectPath": "C:\\Users\\disrct\\super-auto-bosch\\super auto bosch.csproj",
+      "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\disrct\\super-auto-bosch\\obj\\",
+>>>>>>> c82445b2c95cc3d68999154dd0687e505f57984b
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,7 +72,11 @@
             "privateAssets": "none"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.309\\RuntimeIdentifierGraph.json"
+>>>>>>> c82445b2c95cc3d68999154dd0687e505f57984b
       }
     }
   }

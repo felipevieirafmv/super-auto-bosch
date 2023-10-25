@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "K8gGX1hGcCUVQdfe2OmwYz2/POm9CEf5nYF0rzcM5IMSaTz+fbsMck41jznfFS4HiWRVbx3K01EMqLcB0FJtjw==",
   "success": true,
   "projectFilePath": "C:\\Users\\disrct\\Desktop\\super auto bosch\\super auto bosch.csproj",
+=======
+  "dgSpecHash": "0OK2kLI2yMsHpQxncvoiwpqdHPEeqbqNUcf42rE+CuvAClVaxPdBxqIgINMCOcO6TKzxU0VhJqeQ8CovtH94UA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\disrct\\super-auto-bosch\\super auto bosch.csproj",
+>>>>>>> c82445b2c95cc3d68999154dd0687e505f57984b
   "expectedPackageFiles": [],
   "logs": []
 }

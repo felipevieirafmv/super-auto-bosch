@@ -7,6 +7,7 @@ public class ExampleApp : App
     bool clicked = false;
     RectangleF rect1 = RectangleF.Empty;
     RectangleF rect2 = RectangleF.Empty;
+    public State State { get; set; }
     public override void OnFrame(bool isDown, PointF cursor)
     {
         if (rect1.Contains(cursor) && rect2.Contains(cursor) && !isDown)

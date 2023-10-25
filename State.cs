@@ -2,9 +2,9 @@ using System;
 
 public abstract class State
 {
-    public App app;
-    public Loja loja;
-    public Team time;
+    public App app { get; set; }
+    public Loja loja { get; set; }
+    public Team time { get; set; }
     public State NextState { get; set; }
     public abstract void Act();
 }

@@ -14,14 +14,29 @@ public abstract class Loja
             return;
 
         this.Gold -= 3;
-        var comprado = machines[index];
-        machines.Remove(comprado);
+        var comprado = baseMachines[index];
+        baseMachines.Remove(comprado);
         time.Add(comprado);
         comprado.BuyEffect();
     }
 
     public void Add(Machine baseMachine)
         => this.baseMachines.Add(baseMachine);
+
+    public void AddBaseMachines(){
+        machines.Add(new ChaveDeFenda());
+        machines.Add(new Esteira());
+        machines.Add(new Martelo());
+        machines.Add(new FornoIndustrialAGas());
+        machines.Add(new FuradeiraColuna());
+        machines.Add(new RetificaPlana());
+        machines.Add(new FornoIndustrialEletrico());
+        machines.Add(new FuradeiraCoordenada());
+        machines.Add(new RetificaCilindrica());
+        machines.Add(new Fresa());
+        machines.Add(new Torno());
+        machines.Add(new TornoCNC());
+    }
     public void Refill()
     {
                 if (Gold<1)
@@ -32,9 +47,11 @@ public abstract class Loja
         machines.Add(getRandomMaquina());
         machines.Add(getRandomMaquina());
         machines.Add(getRandomMaquina());
+
     }
     private Machine getRandomMaquina()
     {
+
         int index = Random.Shared.Next(baseMachines.Count);
         var baseMachine = this.baseMachines[index];
         return baseMachine.Clone();
@@ -48,4 +65,6 @@ public abstract class Loja
             machines.Add(getRandomMaquina());
 
     }
+
+
 }

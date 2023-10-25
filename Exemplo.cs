@@ -3,6 +3,8 @@ using System.Windows.Forms;
  
 public class ExampleApp : App
 {
+
+    public List<Machine> machines = new List<Machine>();
     public int Turno = 0;
     bool fundiu = false;
     bool clicked = false;
@@ -20,8 +22,6 @@ public class ExampleApp : App
     RectangleF rect11 = RectangleF.Empty;
     RectangleF rect12 = RectangleF.Empty;
     RectangleF rect13 = RectangleF.Empty;
-
-    public State State { get; set; }
     
     public override void OnFrame(bool isDown, PointF cursor)
     {
@@ -47,6 +47,7 @@ public class ExampleApp : App
             rect12 = DrawPiece(new RectangleF(800, 300, 200, 200), 2, 4, 2, 1, true, "Time4");
             rect13 = DrawPiece(new RectangleF(1000, 300, 200, 200), 2, 4, 2, 1, true, "Time5");
 
+
         }
         else
         {
@@ -59,5 +60,6 @@ public class ExampleApp : App
             if (clicked)
                 MessageBox.Show("Iniciar Game");
         }
+        
     }
 }

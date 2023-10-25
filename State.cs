@@ -2,8 +2,9 @@ using System;
 
 public abstract class State
 {
+    public App app;
     public Loja loja;
-    public Time time;
+    public Team time;
     public State NextState { get; set; }
     public abstract void Act();
 }
@@ -12,54 +13,54 @@ public class InicioLojaState : State
     public override void Act()
     {
         var quant = 0;
-        loja.Moeda = 10;
-        if (App.Turno < 5)
+        loja.Gold = 10;
+        if (app.Turno < 5)
         {
             quant = 3;
         }
-        else if (App.Turno > 8)
+        else if (app.Turno > 8)
         {
             quant = 5;
         }
         else
             quant = 4;
         loja.FreeRefill(quant);
-        foreach (machine M in time)
+        foreach (Machine M in time.machines)
             M.TurnBegin();
+        //Desenhar a loja
+
     }
 }
 
-public class LojaState : State
-{
-    //libera a compra
-}
 public class FimLojaState : State
 {
-    foreach(machine M in time)
-        M.TurnEnd();
+    public override void Act()
+    {
+        foreach(Machine M in time.machines)
+            M.TurnEnd();
+    }
 }
 public class InicioBatalhaState : State
 {
-
+    public override void Act()
+    {
+        //Desenhar campo de batalha
+        foreach (Machine M in time.machines)
+            M.StartBattleEffect();
+    }
 }
 public class BatalhaState : State
 {
-
-}
-
-public class RotateState : State
-{
-    public float AngleTarget { get; set; }
     public override void Act()
     {
-        var dTheta = AngleTarget - enemy.Angle;
+        //Porradaria franca
+    }
+}
 
-        if (MathF.Abs(dTheta) < 0.05)
-        {
-            this.enemy.State = NextState;
-            return;
-        }
-
-        enemy.Angle += 0.1f * MathF.Sign(dTheta);
+public class FimBatalha : State
+{
+    public override void Act()
+    {
+        //Vitoria, derrota ou empate
     }
 }

@@ -12,6 +12,7 @@ public abstract class App
     PointF? grabDesloc = null;
     bool isDown = false;
     int frame = 0;
+    public int Turno = 0;
  
     public void Run()
     {

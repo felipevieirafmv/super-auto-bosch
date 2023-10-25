@@ -5,6 +5,7 @@ public abstract class Machine
     public int Experiencia   {get; set;}
     public bool Desmaiou     {get; private set;}
     public int Tier         { get; set; }
+    public string Nome { get; set; }
 
     public int Level =>
         Experiencia switch

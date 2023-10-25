@@ -5,6 +5,7 @@ public class ChaveDeFenda : Machine
         this.Ataque = 2;
         this.Vida = 3;
         this.Tier = 1;
+        this.Nome = "Chave de Fenda";
     }
 
     public override Machine Clone()

@@ -1,20 +1,51 @@
 using System;
+using System.Drawing.Imaging;
 
 public abstract class Loja
 {
-    public int Moeda {get; set;} = 10;
+    public int Gold {get; set;} = 10;
 
-    private List<Pet> pets = new List<Pet>();
+    protected List<Machine> machines = new List<Machine>();
+    protected List<Machine> baseMachines = new List<Machine>();
 
-    private List<Pet> basePets = new List<Pet>();
+    public void Buy(int index, Time time)
+    {
+        if (Gold < 3)
+            return;
 
-    public void Buy(int index, Team team);
+        this.Gold -= 3;
+        var comprado = machines[index];
+        machines.Remove(comprado);
+        time.Add(comprado);
+        comprado.BuyEffect();
+    }
 
-    public void Add(Pet basePet);
+    public void Add(Machine baseMachine)
+        => this.baseMachines.Add(baseMachine);
+    public void Refill()
+    {
+                if (Gold<1)
+            return;
 
-    public void Refill();
+        Gold--;
+        machines.Clear();
+        machines.Add(getRandomMaquina());
+        machines.Add(getRandomMaquina());
+        machines.Add(getRandomMaquina());
+    }
+    private Machine getRandomMaquina()
+    {
+        int index = Random.Shared.Next(baseMachines.Count);
+        var baseMachine = this.baseMachines[index];
+        return baseMachine.Clone();
+    }
 
-    private Pet getRandomPet();
+    public void FreeRefill(int index)
+    {
+        machines.Clear();
 
-    public void FreeRefill();
+        for (int i = 0; i < index;i++)
+            machines.Add(getRandomMaquina());
+
+    }
 }

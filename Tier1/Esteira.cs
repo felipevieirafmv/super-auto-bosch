@@ -7,6 +7,11 @@ public class Esteira : Machine
         this.Tier = 1;
     }
 
+    public override void SellEffect(Loja loja)
+    {
+        loja.Gold += 1;
+    }
+
     public override Machine Clone()
     {
         Esteira esteira = new Esteira();

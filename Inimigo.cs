@@ -1,4 +1,4 @@
 public class Enemy
 {
-    public List<Machine> EnemyTeam = new Team();
+    public List<Machine> EnemyTeam = new List<Machine>();
 }

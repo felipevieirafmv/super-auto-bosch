@@ -1,11 +1,12 @@
 public abstract class Machine
 {
-    public int Ataque       {get; set;}
-    public int Vida         {get; set;}
-    public int Experiencia   {get; set;}
-    public bool Desmaiou     {get; private set;}
+    public int Ataque       { get; set; }
+    public int Vida         { get; set; }
+    public int Experiencia  { get; set; }
+    public bool Desmaiou    { get; private set; }
     public int Tier         { get; set; }
-    public string Nome { get; set; }
+    public string Nome      { get; set; }
+    public int EffectNumber { get; set; }
 
     public int Level =>
         Experiencia switch
@@ -59,14 +60,15 @@ public abstract class Machine
         
     }
 
-    public virtual void FaintEffect() { }
-    public virtual void SellEffect() { }
-    public virtual void BuyEffect() { }
-    public virtual void LevelUpEffect() { }
-    public virtual void StartBattleEffect() { }
-    public virtual void TurnBegin() { }
-    public virtual void TurnEnd() { }
-    public virtual void AllySummonedEffect() { }
-    public abstract Machine Clone();
+    public virtual void FaintEffect( ) { }
+    public virtual void SellEffect(Loja loja ) { }
+    public virtual void BuyEffect( ) { }
+    public virtual void LevelUpEffect( ) { }
+    public virtual void StartBattleEffect( ) { }
+    public virtual void HurtEffect(Enemy inimigo, Player player ) { }
+    public virtual void TurnBegin(Loja loja) { }
+    public virtual void TurnEnd(Player player ) { }
+    public virtual void AllySummonedEffect( ) { }
+    public abstract Machine Clone( );
 
 }

@@ -8,7 +8,7 @@ public abstract class Player
     public abstract void Construtor();
 }
 
-public abstract class Player1 : Player
+public class Player1 : Player
 {
     public override void Construtor()
     {

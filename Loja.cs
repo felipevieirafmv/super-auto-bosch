@@ -1,14 +1,14 @@
 using System;
 using System.Drawing.Imaging;
 
-public abstract class Loja
+public class Loja
 {
     public int Gold {get; set;} = 10;
 
     protected List<Machine> machines = new List<Machine>();
     protected List<Machine> baseMachines = new List<Machine>();
 
-    public void Buy(int index, Time time)
+    public void Buy(int index, Player player)
     {
         if (Gold < 3)
             return;
@@ -16,7 +16,7 @@ public abstract class Loja
         this.Gold -= 3;
         var comprado = machines[index];
         machines.Remove(comprado);
-        time.Add(comprado);
+        player.Time.Add(comprado);
         comprado.BuyEffect();
     }
 

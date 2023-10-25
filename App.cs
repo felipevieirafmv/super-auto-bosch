@@ -13,6 +13,7 @@ public abstract class App
     bool isDown = false;
     int frame = 0;
     public int Turno = 0;
+    public Jogo jogo = new Jogo(new InicioLojaState());
  
     public void Run()
     {

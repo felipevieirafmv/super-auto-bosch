@@ -8,7 +8,7 @@ public class Furadeira : Machine
         this.EffectNumber = 1;
     }
 
-    public virtual void FaintEffect(Player player ) 
+    public override void FaintEffect(Player player ) 
     { 
         var playerTeam = player.Time;
         if (playerTeam == null)

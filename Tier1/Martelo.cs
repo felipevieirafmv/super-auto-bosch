@@ -7,6 +7,12 @@ public class Martelo : Machine
         this.Tier = 1;
     }
 
+    public override void SellEffect(Player player)
+    {
+        foreach (Machine m in player.lojaPlayer.machines)
+            m.Vida +=1;
+    }
+
     public override Machine Clone()
     {
         Martelo martelo = new Martelo();

@@ -5,8 +5,13 @@ public class Loja
 {
     public int Gold {get; set;} = 10;
 
+<<<<<<< HEAD
     protected List<Machine> machines = new List<Machine>();
     protected List<Machine> baseMachines { get; set; }
+=======
+    public List<Machine> machines = new List<Machine>();
+    protected List<Machine> baseMachines = new List<Machine>();
+>>>>>>> d53135f31ce342de4bfa473ee7d2cff21c317d46
 
     public void Buy(int index, Player player)
     {

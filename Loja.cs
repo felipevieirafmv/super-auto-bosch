@@ -5,7 +5,7 @@ public class Loja
 {
     public int Gold {get; set;} = 10;
 
-    protected List<Machine> machines = new List<Machine>();
+    public List<Machine> machines = new List<Machine>();
     protected List<Machine> baseMachines = new List<Machine>();
 
     public void Buy(int index, Player player)

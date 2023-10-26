@@ -7,9 +7,9 @@ public class Esteira : Machine
         this.Tier = 1;
     }
 
-    public override void SellEffect(Loja loja)
+    public override void SellEffect(Player player)
     {
-        loja.Gold += 1;
+        player.lojaPlayer.Gold += 1;
     }
 
     public override Machine Clone()

@@ -6,7 +6,7 @@ public class Loja
     public int Gold {get; set;} = 10;
 
     protected List<Machine> machines = new List<Machine>();
-    protected List<Machine> baseMachines = new List<Machine>();
+    protected List<Machine> baseMachines { get; set; }
 
     public void Buy(int index, Player player)
     {
@@ -37,7 +37,7 @@ public class Loja
         machines.Add(getRandomMaquina());
 
     }
-    private Machine getRandomMaquina()
+    public Machine getRandomMaquina()
     {
 
         int index = Random.Shared.Next(baseMachines.Count);
@@ -48,7 +48,6 @@ public class Loja
     public void FreeRefill(int index)
     {
         machines.Clear();
-
         for (int i = 0; i < index;i++)
             machines.Add(getRandomMaquina());
 

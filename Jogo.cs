@@ -2,13 +2,11 @@ public class Jogo
 {
     public Player player1 = new Player1();
     public Enemy enemy { get; set; }
-    public Loja loja { get; set; }
     public State State = null;
-
+    public int turno = 0;
     public Jogo(State state)
     {
         this.TransitionTo(state);
-        this.Start(loja);
     }
     public void TransitionTo(State state)
     {
@@ -16,26 +14,27 @@ public class Jogo
         this.State.SetJogo(this);
     }
 
-    public void Start(Loja loja)
+    public void Start()
     {
-        loja.Add(new ChaveDeFenda());
-        loja.Add(new Esteira());
-        loja.Add(new Martelo());
-        loja.Add(new FornoIndustrialAGas());
-        loja.Add(new FuradeiraColuna());
-        loja.Add(new RetificaPlana());
-        loja.Add(new FornoIndustrialEletrico());
-        loja.Add(new FuradeiraCoordenada());
-        loja.Add(new RetificaCilindrica());
-        loja.Add(new Fresa());
-        loja.Add(new Torno());
-        loja.Add(new TornoCNC());
+        machines.Add(new ChaveDeFenda());
+        machines.Add(new Esteira());
+        machines.Add(new Martelo());
+        machines.Add(new FornoIndustrialAGas());
+        machines.Add(new FuradeiraColuna());
+        machines.Add(new RetificaPlana());
+        machines.Add(new FornoIndustrialEletrico());
+        machines.Add(new FuradeiraCoordenada());
+        machines.Add(new RetificaCilindrica());
+        machines.Add(new Fresa());
+        machines.Add(new Torno());
+        machines.Add(new TornoCNC());
 
         player1.Construtor();
 
-        player1.lojaPlayer = loja;
-        enemy.lojaEnemy = loja;
+        player1.baseMachines = machines;
+        enemy.lojaEnemy = machines;
 
+        
 
     }
 }

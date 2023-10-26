@@ -2,7 +2,6 @@ using System;
 
 public abstract class State
 {
-    public App app { get; set; }
     public Loja loja { get; set; }
     public Player1 player1 { get; set; }
     public State nextState = null;
@@ -20,11 +19,11 @@ public class InicioLojaState : State
     {
         var quant = 0;
         loja.Gold = 10;
-        if (app.Turno < 5)
+        if (jogo.turno < 5)
         {
             quant = 3;
         }
-        else if (app.Turno > 8)
+        else if (jogo.turno > 8)
         {
             quant = 5;
         }
@@ -73,6 +72,7 @@ public class FimBatalhaState : State
 {
     public override void Act()
     {
+        jogo.turno++;
         //Vitoria, derrota ou empate
         nextState = new InicioLojaState();
 

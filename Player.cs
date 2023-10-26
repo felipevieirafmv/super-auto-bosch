@@ -4,7 +4,7 @@ public abstract class Player
 {
     public int Vida { get; set; }
     public int Trofeus { get; set; }
-    public Loja lojaPlayer { get; set; }
+    public List<Machine> baseMachines { get; set; }
     public List<Machine> Time = new();
     public abstract void Construtor();
 }

@@ -5,6 +5,7 @@ public abstract class State
     public App app { get; set; }
     public Loja loja { get; set; }
     public Player1 player1 { get; set; }
+    public State nextState = null;
     protected Jogo jogo;
 
     public void SetJogo(Jogo jogo)
@@ -35,7 +36,7 @@ public class InicioLojaState : State
 
         //Desenhar a loja
 
-        this.jogo.TransitionTo(new FimLojaState());
+        nextState = new FimLojaState();
     }
 }
 
@@ -46,7 +47,7 @@ public class FimLojaState : State
         foreach(Machine M in player1.Time)
             M.TurnEnd(player1);
 
-        this.jogo.TransitionTo(new InicioBatalhaState());
+        nextState = new InicioBatalhaState();
     }
 }
 public class InicioBatalhaState : State
@@ -56,7 +57,7 @@ public class InicioBatalhaState : State
         //Desenhar campo de batalha
         foreach (Machine M in player1.Time)
             M.StartBattleEffect();
-        this.jogo.TransitionTo(new BatalhaState());
+        nextState = new BatalhaState();
     }
 }
 public class BatalhaState : State
@@ -64,7 +65,7 @@ public class BatalhaState : State
     public override void Act()
     {
         //Porradaria franca
-        this.jogo.TransitionTo(new FimBatalhaState());
+        nextState = new FimBatalhaState();
     }
 }
 
@@ -73,7 +74,7 @@ public class FimBatalhaState : State
     public override void Act()
     {
         //Vitoria, derrota ou empate
-        this.jogo.TransitionTo(new InicioLojaState());
+        nextState = new InicioLojaState();
 
     }
 }

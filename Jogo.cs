@@ -3,11 +3,12 @@ public class Jogo
     public Player player1 = new Player1();
     public Enemy enemy { get; set; }
     public Loja loja { get; set; }
-    private State State = null;
+    public State State = null;
 
     public Jogo(State state)
     {
         this.TransitionTo(state);
+        this.Start(loja);
     }
     public void TransitionTo(State state)
     {
@@ -35,11 +36,6 @@ public class Jogo
         player1.lojaPlayer = loja;
         enemy.lojaEnemy = loja;
 
-        
-    }
 
-    public void Act()
-    {
-        this.State.Act();
     }
 }

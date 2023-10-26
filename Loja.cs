@@ -24,18 +24,6 @@ public class Loja
         => this.baseMachines.Add(baseMachine);
 
     public void AddBaseMachines(){
-        machines.Add(new ChaveDeFenda());
-        machines.Add(new Esteira());
-        machines.Add(new Martelo());
-        machines.Add(new FornoIndustrialAGas());
-        machines.Add(new FuradeiraColuna());
-        machines.Add(new RetificaPlana());
-        machines.Add(new FornoIndustrialEletrico());
-        machines.Add(new FuradeiraCoordenada());
-        machines.Add(new RetificaCilindrica());
-        machines.Add(new Fresa());
-        machines.Add(new Torno());
-        machines.Add(new TornoCNC());
     }
     public void Refill()
     {

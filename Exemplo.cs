@@ -3,7 +3,7 @@ using System.Windows.Forms;
  
 public class ExampleApp : App
 {
-
+    public Jogo Jogo = new Jogo(new InicioLojaState());
     public List<Machine> machines = new List<Machine>();
     public int Turno = 0;
     bool fundiu = false;
@@ -25,10 +25,13 @@ public class ExampleApp : App
     
     public override void OnFrame(bool isDown, PointF cursor)
     {
+        Jogo.Act();
+
+
 
         if (rect1.Contains(cursor) && rect2.Contains(cursor) && !isDown)
             fundiu = true;
- 
+
         if (!fundiu)
         {
             rect1 = DrawPiece(new RectangleF(50, 600, 200, 200), 1, 3, 1, 1, true, "CNC");
